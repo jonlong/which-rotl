@@ -1,10 +1,11 @@
 var _ = require('lodash');
 var fs = require('fs');
 
-module.exports = (function() {
+module.exports = (function(env) {
 
   // Set Defaults
   var defaults = {
+    env: process.env.NODE_ENV || 'development',
     web: {
       port: process.env.WEB_PORT || 3000
     },
@@ -14,7 +15,7 @@ module.exports = (function() {
     }
   };
 
-  var envConfigPath = __dirname + '/' + process.env.NODE_ENV + '.js';
+  var envConfigPath = __dirname + '/' + defaults.env + '.js';
 
   // Load an env-specific file, if it exists
   if (fs.existsSync(envConfigPath)) {
@@ -26,4 +27,4 @@ module.exports = (function() {
 
   // Overwrite defaults with env-specific properties
   return _.merge(defaults, environment);
-}());
+})();
