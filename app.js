@@ -4,6 +4,7 @@
 
 var express = require('express');
 var swig = require('swig');
+var mongoose = require('mongoose');
 var app = express();
 
 /**
@@ -11,8 +12,29 @@ var app = express();
  */
 
 // Load configuration
-var env = process.env.NODE_ENV || 'development';
 var config = require('./config');
+
+/* Database */
+var connect = function() {
+  var options = {
+    server: {
+      socketOptions: {
+        keepAlive: 1
+      }
+    }
+  };
+
+  mongoose.connect('mongodb://' + config.db.username + ':' + config.db.password + '@' + config.db.host + ':' + config.db.port + '/' + config.db.name, options);
+};
+connect();
+
+mongoose.connection.on('error', function(err) {
+  console.log('Database connection error: ', err);
+});
+
+mongoose.connection.on('disconnected', function() {
+  connect();
+});
 
 /* Express config */
 app.engine('.html', swig.renderFile);
