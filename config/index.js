@@ -14,8 +14,7 @@ module.exports = (function() {
     }
   };
 
-
-  var envConfigPath = defaults.config.paths.environments + '/' + defaults.env + '.js';
+  var envConfigPath = __dirname + '/' + process.env.NODE_ENV + '.js';
 
   // Load an env-specific file, if it exists
   if (fs.existsSync(envConfigPath)) {
