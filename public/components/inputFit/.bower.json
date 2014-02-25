@@ -1,0 +1,13 @@
+{
+  "name": "inputFit",
+  "homepage": "https://github.com/vxsx/jquery.inputfit.js",
+  "_release": "7ef1d65d4c",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "7ef1d65d4c11db768ec37f5bacc0d134550ef2e2"
+  },
+  "_source": "git://github.com/vxsx/jquery.inputfit.js.git",
+  "_target": "*",
+  "_originalSource": "vxsx/jquery.inputfit.js"
+}

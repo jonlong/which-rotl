@@ -1,0 +1,44 @@
+########################
+# node.js / npm
+########################
+lib-cov
+*.seed
+*.log
+*.csv
+*.dat
+*.out
+*.pid
+*.gz
+
+pids
+logs
+results
+
+node_modules
+
+npm-debug.log
+
+########################
+# misc / editors
+########################
+*.DS_Store
+*.csv
+*.dat
+*.gz
+*.log
+*.out
+*.pid
+*.pyc
+*.rdb
+*.seed
+*.swp
+*~
+
+########################
+# local config
+########################
+config/development.js
+
+########################
+# built files
+########################

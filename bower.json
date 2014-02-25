@@ -1,0 +1,23 @@
+{
+  "name": "which-rotl",
+  "version": "0.0.0",
+  "authors": [
+    "Jon Long <jon@linesandwaves.com>"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.1.1",
+    "typeahead.js": "~0.10.1",
+    "inputFit": "vxsx/jquery.inputfit.js",
+    "FitText.js": "*"
+  }
+}
