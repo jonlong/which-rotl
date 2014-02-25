@@ -1,5 +1,5 @@
 var config = require('../../config');
-var errorMessage = 'Unauthorized.';
+var errorMessage = '401 Unauthorized.';
 
 module.exports = function(express) {
   return express.basicAuth(function(username, password) {
