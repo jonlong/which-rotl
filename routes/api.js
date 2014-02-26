@@ -14,6 +14,7 @@ module.exports = function(app, express) {
 
     logger.info('WEBHOOK RECEIVE', req.body);
 
+    // Save the entry to the database
     // var entry = {
     //   topic: req.body.topic,
     //   episode_number: req.body.episode_number,
@@ -26,7 +27,7 @@ module.exports = function(app, express) {
     // new Entry(entry).save();
   });
 
-  app.post('/entry/new', basicAuth, function(req, res) {
+  app.post('/entry/submit', basicAuth, function(req, res) {
 
     var entry = {
       subject: 'Some Subject',
@@ -34,7 +35,7 @@ module.exports = function(app, express) {
       description: 'Some Description',
       status: 'new',
       type: 'email',
-      labels: ['ignore', 'spam'],
+      labels: ['Submission'],
       custom_fields: {},
       message: {
         to: 'jon@linesandwaves.com',
