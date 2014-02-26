@@ -29,6 +29,7 @@ module.exports = function(app, express) {
 
   app.post('/entry/submit', basicAuth, function(req, res) {
 
+    // Create the case object
     var entry = {
       subject: 'Some Subject',
       priority: 5,
@@ -50,8 +51,9 @@ module.exports = function(app, express) {
           'class': 'customer'
         }
       }
-    }
+    };
 
+    // Get a customer record
     desk.findOrCreateCustomer(req.body, function(err, customerLink) {
 
       if (err) {
@@ -60,7 +62,7 @@ module.exports = function(app, express) {
         return;
       }
 
-      // Set the customer link in the case body
+      // Assign the customer record to the case
       entry._links.customer.href = customerLink;
 
       // Create a new case
