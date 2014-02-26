@@ -63,6 +63,7 @@ module.exports = function(app, express) {
       // Set the customer link in the case body
       entry._links.customer.href = customerLink;
 
+      // Create a new case
       desk.createCase(entry, function(err) {
 
         if (err) {
