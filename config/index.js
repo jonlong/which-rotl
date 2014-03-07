@@ -1,5 +1,6 @@
 var _ = require('lodash');
 var fs = require('fs');
+var path = require('path');
 
 module.exports = (function(env) {
 
@@ -12,6 +13,9 @@ module.exports = (function(env) {
     api: {
       username: process.env.API_USERNAME,
       password: process.env.API_PASSWORD
+    },
+    data: {
+      path: path.join(__dirname + '/../data/episodes.json')
     }
   };
 
