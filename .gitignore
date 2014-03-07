@@ -40,5 +40,6 @@ npm-debug.log
 config/development.js
 
 ########################
-# built files
+# feed data
 ########################
+data/**
