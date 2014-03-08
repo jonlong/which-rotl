@@ -6,6 +6,9 @@ var express = require('express');
 var swig = require('swig');
 var mongoose = require('mongoose');
 var app = express();
+var feed = require('./lib/feed');
+var cron = require('./lib/cron');
+
 
 /**
  * Application
@@ -52,6 +55,13 @@ swig.setDefaults({
 
 // Routes
 require('./routes')(app, express);
+
+// Retrieve Feed data
+feed.fetchAndSave(function() {
+  // Initialize the cron
+  cron.start();
+});
+
 
 // Start 'er up
 app.listen(config.web.port);
