@@ -15,7 +15,9 @@ module.exports = (function(env) {
       password: process.env.API_PASSWORD
     },
     data: {
-      path: path.join(__dirname + '/../data/episodes.json')
+      path: path.join(__dirname + '/../data/episodes.json'),
+      // Once a day, at midnight
+      cron: '0 0 0 * *'
     }
   };
 
