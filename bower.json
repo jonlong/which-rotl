@@ -18,6 +18,10 @@
     "bootstrap": "~3.1.1",
     "typeahead.js": "~0.10.1",
     "inputFit": "vxsx/jquery.inputfit.js",
-    "FitText.js": "*"
+    "FitText.js": "*",
+    "parsleyjs": "~1.2.4",
+    "jquery-runner": "jylauril/jquery-runner",
+    "countdown": "~1.0.1",
+    "select2": "~3.4.5"
   }
 }
