@@ -9,8 +9,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
     <link rel="stylesheet" type="text/css" href="/components/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="/components/bootstrap-timepicker/css/bootstrap-timepicker.min.css" />
     <link rel="stylesheet" type="text/css" href="/custom/css/screen.css" />
-    <link href='http://fonts.googleapis.com/css?family=Bitter:700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Bitter:700' rel='stylesheet' type='text/css' />{% block page-styles %}{% endblock %} {% block head-scripts %}{% endblock %}
 </head>
 
 <body>
@@ -19,14 +20,9 @@
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
     <script>
-    window.jQuery || document.write('<script src="/components/jquery/jquery.min.js"><\/script>')
+    window.jQuery || document.write('<script src="/components/jquery/dist/jquery.min.js"><\/script>')
     </script>
-    {% block page-scripts %}
-    <script src="/components/FitText.js/jquery.fittext.js"></script>
-    <script src="/components/inputFit/jquery.inputfit.js"></script>
-    <script src="/components/typeahead.js/dist/typeahead.bundle.js"></script>
-    {% endblock %}
-    <script src="/custom/js/main.js"></script>
+    {% block page-scripts %}{% endblock %}
 
     <script>
     (function(b, o, i, l, e, r) {
