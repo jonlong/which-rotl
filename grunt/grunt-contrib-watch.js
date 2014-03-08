@@ -20,6 +20,10 @@ module.exports = function(grunt) {
       files: [grunt.config.get('meta.dirs.sass') + '/**/*'],
       tasks: ['compass']
     },
+    browserify: {
+      files: [grunt.config.get('meta.dirs.js') + '/**/*'],
+      tasks: ['browserify']
+    },
   });
 
   grunt.loadNpmTasks('grunt-contrib-watch');

@@ -1,0 +1,23 @@
+{
+  "name": "jQuery-runner",
+  "version": "2.3.0",
+  "main": "dist/jquery.runner.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jylauril/jquery-runner.git"
+  },
+  "dependencies": {
+    "jquery": "~1.9.1",
+    "jasmine-sinon": "~0.1.0"
+  },
+  "homepage": "https://github.com/jylauril/jquery-runner",
+  "_release": "2.3.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "2.3.0",
+    "commit": "16fd4e172074aba0fd342e8c32a8e835846f68d1"
+  },
+  "_source": "git://github.com/jylauril/jquery-runner.git",
+  "_target": "*",
+  "_originalSource": "jylauril/jquery-runner"
+}
