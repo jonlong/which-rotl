@@ -1,4 +1,7 @@
 var getEpisodeList = require('./middleware/getEpisodeList');
+var validateTopicSlug = require('./middleware/validateTopicSlug');
+var getEpisodeDetails = require('./middleware/getEpisodeDetails');
+var assembleTopicCollection = require('./middleware/assembleTopicCollection');
 
 module.exports = function(app) {
 
@@ -19,6 +22,10 @@ module.exports = function(app) {
     res.render('submit', {
       episodes: req.episodes
     });
+  });
+
+  app.get('/topics/:topicSlug', validateTopicSlug, getEpisodeDetails, assembleTopicCollection, function(req, res) {
+    console.log(res.topicCollection);
   });
 
 };
