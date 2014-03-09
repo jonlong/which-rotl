@@ -25,7 +25,8 @@ module.exports = function(app) {
   });
 
   app.get('/topics/:topicSlug', validateTopicSlug, getEpisodeDetails, assembleTopicCollection, function(req, res) {
-    console.log(res.topicCollection);
+    res.render('topic', {
+      collection: res.topicCollection
+    });
   });
-
 };

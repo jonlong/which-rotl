@@ -13,7 +13,10 @@ module.exports = function(req, res, next) {
   // req.topicEntries;
 
   // make a data structure that looks like this:
-  var topicCollection = [];
+  var topicCollection = {
+    topic: res.topicEntries[0].topic_display,
+    data: []
+  };
 
   for (var i = 0; i < res.episodeDetails.length; i++) {
     var collection = {};
@@ -25,7 +28,7 @@ module.exports = function(req, res, next) {
     });
 
     collection.appearances = topics;
-    topicCollection.push(collection);
+    topicCollection.data.push(collection);
   }
 
   res.topicCollection = topicCollection;
