@@ -2,13 +2,13 @@
  * Module dependencies.
  */
 
+var fs = require('fs');
 var express = require('express');
 var swig = require('swig');
 var mongoose = require('mongoose');
 var app = express();
 var feed = require('./lib/feed');
 var cron = require('./lib/cron');
-
 
 /**
  * Application
@@ -37,6 +37,13 @@ mongoose.connection.on('error', function(err) {
 
 mongoose.connection.on('disconnected', function() {
   connect();
+});
+
+// Bootstrap models
+fs.readdirSync(config.modelsPath).forEach(function(file) {
+  if (~file.indexOf('.js')) {
+    require(config.modelsPath + '/' + file);
+  }
 });
 
 /* Express config */

@@ -7,6 +7,7 @@ module.exports = (function(env) {
   // Set Defaults
   var defaults = {
     env: process.env.NODE_ENV || 'development',
+    modelsPath: __dirname + '/../models/',
     web: {
       port: process.env.WEB_PORT || 3000
     },

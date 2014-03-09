@@ -1,5 +1,6 @@
 var config = require('../config');
-var Entry = require('../models/entry');
+var mongoose = require('mongoose');
+var Entry = mongoose.model('Entry');
 var desk = require('../lib/desk');
 var buildEntry = require('../lib/buildEntry');
 var logger = require('winston');
