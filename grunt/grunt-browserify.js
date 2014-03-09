@@ -9,9 +9,9 @@ module.exports = function(grunt) {
       src: [grunt.config.get('meta.dirs.js') + '/submit.js'],
       dest: grunt.config.get('meta.dirs.public') + '/dist/submit.js'
     },
-    entry: {
-      src: [grunt.config.get('meta.dirs.js') + '/entry.js'],
-      dest: grunt.config.get('meta.dirs.public') + '/dist/entry.js'
+    topic: {
+      src: [grunt.config.get('meta.dirs.js') + '/topic.js'],
+      dest: grunt.config.get('meta.dirs.public') + '/dist/topic.js'
     }
   });
 
