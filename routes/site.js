@@ -11,6 +11,10 @@ module.exports = function(app) {
     res.render('entry');
   });
 
+  app.get('/topics', function(req, res) {
+    res.render('topics');
+  });
+
   app.get('/submit', getEpisodeList, function(req, res) {
     res.render('submit', {
       episodes: req.episodes
