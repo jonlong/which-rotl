@@ -1,0 +1,38 @@
+{% extends "layout.html" %} {% block content %}
+
+<h1>{{collection.topic}}</h1>
+<h2>Appearances</h2>
+
+{% for entry in collection.data %}
+
+<section>
+
+    <h3>{{entry.episode.title}}</h3>
+    <p>{{entry.episode.content | safe}}</p>
+
+    <ul>
+        {% for appearance in entry.appearances %}
+        <li>
+
+            <p>Time Start: {{appearance.time_start}}</p>
+            <p>Time Stop: {{appearance.time_stop}}</p>
+
+            {% if appearance.description %}
+            <p>Description: {{ appearance.description }}</p>
+            {% endif %}
+
+            <div class="clip">
+                <audio src="{{entry.episode.mediaGroups[0].contents[0].url}}" controls="controls" data-start-time="{{ Math.floor(appearance.time_start/1000) }}" data-end-time="{{ Math.floor(appearance.time_stop/1000) }}">
+                    Your browser does not support the audio tag
+                </audio>
+                <span class="countdown"></span>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+
+</section>
+
+{% endfor %} {% endblock %} {% block page-scripts %}
+<script src="/dist/topic.js"></script>
+{% endblock %}
