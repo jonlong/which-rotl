@@ -2,7 +2,8 @@
  var Schema = mongoose.Schema;
 
  module.exports = mongoose.model('Entry', new Schema({
-   topic: String,
+   topic_display: String,
+   topic_slug: String,
    episode_number: Number,
    time_start: Number,
    time_stop: Number,

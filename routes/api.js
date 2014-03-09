@@ -22,7 +22,7 @@ module.exports = function(app, express) {
       if (err) {
         logger.warn(err);
       } else {
-        logger.info('record saved');
+        logger.info('record saved: ' + entry.topic_display);
       }
     });
   });
