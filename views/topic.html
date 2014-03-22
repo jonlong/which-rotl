@@ -14,15 +14,12 @@
         {% for appearance in entry.appearances %}
         <li>
 
-            <p>Time Start: {{appearance.time_start}}</p>
-            <p>Time Stop: {{appearance.time_stop}}</p>
-
-            {% if appearance.description %}
             <p>Description: {{ appearance.description }}</p>
-            {% endif %}
+            <!-- {% if appearance.description %} -->
+            <!-- {% endif %} -->
 
             <div class="clip">
-                <audio src="{{entry.episode.mediaGroups[0].contents[0].url}}" controls="controls" data-start-time="{{ Math.floor(appearance.time_start/1000) }}" data-end-time="{{ Math.floor(appearance.time_stop/1000) }}">
+                <audio src="{{entry.episode.mediaGroups[0].contents[0].url}}" controls data-start-time="{{ Math.floor(appearance.time_start/1000) }}" data-end-time="{{ Math.floor(appearance.time_stop/1000) }}">
                     Your browser does not support the audio tag
                 </audio>
                 <span class="countdown"></span>
@@ -36,3 +33,8 @@
 {% endfor %} {% endblock %} {% block page-scripts %}
 <script src="/dist/topic.js"></script>
 {% endblock %}
+
+
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.

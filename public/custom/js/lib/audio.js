@@ -6,16 +6,18 @@ exports.init = function($clip) {
   var $countdown = $clip.find('.countdown');
 
   // In seconds
+
   var startTime = parseInt($audio.attr('data-start-time'), 10);
   var endTime = parseInt($audio.attr('data-end-time'), 10);
-  var duration = (endTime - startTime) * 1000;
+  var duration = endTime - startTime;
 
   // Initialize the countdown
-  countdown.init($countdown, duration);
+  countdown.init($countdown, duration * 1000, function() {
+    //stop the audio automatically and reset everything
+  });
 
   // Set the play position once the audio file is ready
   $audio.on('canplay', function() {
-    console.log('startTime', startTime);
     $(this)[0].currentTime = startTime;
     $(this)[0].pause();
   });
@@ -29,7 +31,7 @@ exports.init = function($clip) {
   });
 
   // Stop the clip once the duration has elapsed
-  $countdown.on('finish.countdown', function() {
+  $countdown.on('runnerFinish', function() {
     $audio[0].pause();
   });
 };

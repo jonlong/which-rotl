@@ -237,8 +237,8 @@
 
   })();
 
-  if (this.$) {
-    this.$.fn.runner = function(method, options, start) {
+  if ($) {
+    $.fn.runner = function(method, options, start) {
       var id, runner;
       if (!method) {
         method = 'init';
@@ -283,7 +283,7 @@
       }
       return this;
     };
-    this.$.fn.runner.format = formatTime;
+    $.fn.runner.format = formatTime;
   } else {
     throw '[' + meta.name + '] jQuery library is required for this plugin to work';
   }

@@ -28,5 +28,6 @@ module.exports = function(app) {
     res.render('topic', {
       collection: res.topicCollection
     });
+    console.log(res.topicCollection.data[0].appearances)
   });
 };

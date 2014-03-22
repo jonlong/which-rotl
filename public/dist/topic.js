@@ -300,11 +300,15 @@ exports.init = function($clip) {
   var $countdown = $clip.find('.countdown');
 
   // In seconds
-  var startTime = parseInt($audio.attr('data-start-time'), 10) * 1000;
-  var endTime = parseInt($audio.attr('data-end-time'), 10) * 1000;
+
+  var startTime = parseInt($audio.attr('data-start-time'), 10);
+  var endTime = parseInt($audio.attr('data-end-time'), 10);
+  var duration = endTime - startTime;
 
   // Initialize the countdown
-  countdown.init($countdown, startTime, endTime);
+  countdown.init($countdown, duration * 1000, function() {
+    //stop the audio automatically and reset everything
+  });
 
   // Set the play position once the audio file is ready
   $audio.on('canplay', function() {
@@ -321,7 +325,7 @@ exports.init = function($clip) {
   });
 
   // Stop the clip once the duration has elapsed
-  $countdown.on('finish.countdown', function() {
+  $countdown.on('runnerFinish', function() {
     $audio[0].pause();
   });
 };
@@ -329,13 +333,13 @@ exports.init = function($clip) {
 },{"./countdown.js":3}],3:[function(require,module,exports){
 require('../../../components/jquery-runner/build/jquery.runner.js');
 
-exports.init = function($countdown, startAt, stopAt) {
+exports.init = function($countdown, duration, callback) {
 
   $countdown.runner({
     autostart: false,
     countdown: true,
-    startAt: startAt,
-    stopAt: stopAt,
+    startAt: duration,
+    stopAt: 0,
     milliseconds: false
   });
 };
