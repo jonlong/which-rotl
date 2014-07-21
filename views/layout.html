@@ -11,10 +11,12 @@
     <link rel="stylesheet" type="text/css" href="/components/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="/components/bootstrap-timepicker/css/bootstrap-timepicker.min.css" />
     <link rel="stylesheet" type="text/css" href="/custom/css/screen.css" />
-    <link href='http://fonts.googleapis.com/css?family=Bitter:700' rel='stylesheet' type='text/css' />{% block page-styles %}{% endblock %} {% block head-scripts %}{% endblock %}
+    <link href='http://fonts.googleapis.com/css?family=Lusitana:400,700|Crimson+Text:400italic' rel='stylesheet' type='text/css' />
+    {% block page-styles %}{% endblock %}
+    {% block head-scripts %}{% endblock %}
 </head>
 
-<body>
+<body class="{% block body-class %}{% endblock %}">
 
     {% block main-nav %} {% endblock %} {% block content %}{% endblock %}
 
