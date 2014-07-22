@@ -16,7 +16,8 @@
     <section class="row">
 
         <div class="col-md-5">
-            <img src="{{entry.episode.image.src}}" alt="{{entry.episode.image.alt}}" title="{{entry.episode.image.alt}}" class="img-thumbnail img-responsive" />
+            <img src="{{entry.episode.image.src}}" alt="{{entry.episode.image.alt}}" class="img-thumbnail img-responsive" />
+            <p class="caption"><span class="pull-left">Fig {{loop.index}}.</span> <span class="pull-right">{{entry.episode.image.alt}}</span></p>
         </div>
         <div class="col-md-7">
             <h2>{{entry.episode.title}}</h2>
@@ -32,7 +33,6 @@
                         <audio src="{{entry.episode.mediaGroups[0].contents[0].url}}" controls data-start-time="{{ Math.floor(appearance.time_start/1000) }}" data-end-time="{{ Math.floor(appearance.time_stop/1000) }}">
                             Your browser does not support the audio tag
                         </audio>
-                        <span class="countdown"></span>
                     </div>
                 </li>
 
