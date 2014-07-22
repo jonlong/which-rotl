@@ -1270,11 +1270,54 @@ require('../../../components/bootstrap/js/tooltip.js');
 var countdown = require('./countdown.js');
 var Mustache = require('../../../components/mustache/mustache.js');
 
+var humanize = function(seconds){
+  var string;
+  var hours;
+  var minutes;
+
+  if (seconds >= 60 && seconds < 3600) {
+    minutes = Math.floor(seconds/60);
+    string = minutes + ' minute';
+
+    if (minutes > 1) {
+      string += 's';
+    }
+  }
+
+  if (seconds >= 3600) {
+    hours = Math.floor(seconds/3600);
+    minutes = Math.floor((seconds - (hours * 3600))/60);
+
+    if (hours >= 1) {
+      string += hours + ' hour';
+    }
+
+    if (hours > 1) {
+      string += 's';
+    }
+
+    if (minutes >= 1) {
+      string += 'and ' + minutes + ' minute';
+    }
+
+    if (minutes > 1) {
+      string += 's';
+    }
+  }
+
+  string += ' in';
+
+  if (seconds < 60) {
+    string = 'immediately';
+  }
+
+  return string;
+};
 
 var Template = {
   load: function(time, callback) {
     $.get('/custom/js/templates/audio.mst', function(template) {
-      var rendered = Mustache.render(template, {time: time});
+      var rendered = Mustache.render(template, {time: time, humanizedTime: humanize(time.start)});
 
       callback(rendered);
     });

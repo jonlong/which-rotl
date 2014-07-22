@@ -51,6 +51,11 @@ h2 {
   font-size: 25px;
 }
 
+.italic {
+  font-family: 'Crimson Text';
+  font-style: italic;
+}
+
 .topic {
   header {
     margin: 20px 0 40px;
@@ -83,13 +88,20 @@ h2 {
     font-size: 25px;
   }
   .caption {
-    font-family: 'Crimson Text';
-    font-style: italic;
+    @extend .italic;
     font-size: 20px;
     margin-top: 5px;
     .pull-left {
       font-variant: small-caps;
     }
+  }
+  .timestamp {
+    @extend .italic;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: right;
+    padding-left: 20px;
   }
 }
 
