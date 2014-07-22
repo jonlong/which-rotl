@@ -5,6 +5,7 @@ var EntrySchema = new Schema({
   topic_display: String,
   topic_slug: String,
   episode_number: Number,
+  description: String,
   time_start: Number,
   time_stop: Number,
   author_name: String,

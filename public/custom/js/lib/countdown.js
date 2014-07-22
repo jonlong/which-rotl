@@ -7,7 +7,10 @@ exports.init = function($countdown, duration, callback) {
     countdown: true,
     startAt: duration,
     stopAt: 0,
-    milliseconds: false
+    milliseconds: false,
+    format: function(value) {
+      return msToMMSS(value);
+    }
   });
 };
 
@@ -17,4 +20,22 @@ exports.resume = function($countdown) {
 
 exports.pause = function($countdown) {
   $countdown.runner('stop');
+};
+
+var msToMMSS = function(ms) {
+  var date = new Date(ms);
+
+  var hh = date.getUTCHours();
+  var mm = date.getUTCMinutes() + (hh * 60);
+  var ss = date.getUTCSeconds();
+
+  if (mm < 10) {
+    mm = '0' + mm;
+  }
+
+  if (ss < 10) {
+    ss = '0' + ss;
+  }
+
+  return mm + ':' + ss;
 };

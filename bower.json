@@ -21,6 +21,7 @@
     "FitText.js": "*",
     "parsleyjs": "~1.2.4",
     "jquery-runner": "jylauril/jquery-runner",
-    "select2": "~3.4.5"
+    "select2": "~3.4.5",
+    "mustache": "~0.8.2"
   }
 }

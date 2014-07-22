@@ -82,6 +82,15 @@ h2 {
     font-style: italic;
     font-size: 25px;
   }
+  .caption {
+    font-family: 'Crimson Text';
+    font-style: italic;
+    font-size: 20px;
+    margin-top: 5px;
+    .pull-left {
+      font-variant: small-caps;
+    }
+  }
 }
 
 
@@ -187,4 +196,30 @@ Temp
 
 .tt-suggestion p {
   margin: 0;
+}
+
+/* ------------------------------------------------------------
+Custom Audio Player
+------------------------------------------------------------ */
+
+.player input[type=range] {
+    // -webkit-appearance:none;
+    // -moz-apperance:none;
+  border: 1px solid #bbb;
+  height:.5em;
+  border-radius: .5em;
+  width: 100%;
+  margin: -2px;
+  padding: 12px 0 13px;
+  line-height: 0;
+}
+.player input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance:none;
+    -moz-apperance:none;
+  z-index:3;
+  height:1em;
+  width:1em;
+  border-radius:1em;
+  border:1px solid #aaa;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fefefe), color-stop(0.49, #dddddd), color-stop(0.51, #d1d1d1), color-stop(1, #a1a1a1));
 }
